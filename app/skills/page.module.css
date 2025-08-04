@@ -1,0 +1,58 @@
+ .container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f1f1;
+  background-color: #121212;
+  border-radius: 2vh;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #00cec9;
+  margin-bottom: 20px;
+}
+
+.skillSection {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.skillSection h2 {
+  color: #81ecec;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.skillSection p {
+  font-size: 1rem;
+  color: #dfe6e9;
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .skillSection {
+    padding: 15px;
+  }
+
+  .skillSection h2 {
+    font-size: 1.1rem;
+  }
+
+  .skillSection p {
+    font-size: 0.95rem;
+  }
+}  
+.skillSection:hover{
+  background: #0e2e2d;
+  transform: scale(1.02);
+
+}

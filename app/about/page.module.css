@@ -1,0 +1,123 @@
+
+.about {
+  padding: 2rem;
+  background-color: rgb(2, 3, 5);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #065af7;
+}
+
+.intro {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #d9e4f9;
+  line-height: 1.6;
+}
+
+.languageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+
+.div {
+  background-color: #020233;
+  border: 2px solid #3277f8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  animation: fadeInUp 0.5s ease forwards;
+}
+.section{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.div:hover {
+  transform: scale(1.05);
+  border-color: #2194ed;
+  box-shadow: 0 0 15px #1ba3f2;
+}
+
+.h33 {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #fff;
+}
+
+.pp {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #00ffe7;
+}
+
+.p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1000px) {
+  .languageContainer {
+    justify-content: center;
+  }
+
+  .div {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .div {
+    width: 100%;
+  }
+
+  .h1 {
+    font-size: 2rem;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro,
+  .p {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,81 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(2, 3, 5);
+  color: #fff;
+  padding: 1rem 2rem;
+  z-index: 10;
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Animated top border */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff00c8, #00ffff, #ff00c8);
+  animation: moveBorder 4s linear infinite;
+}
+
+@keyframes moveBorder {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer name */
+.name {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+.socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Social icons */
+.socials a {
+  color: #ccc;
+  margin-left: 1rem;
+  font-size: 1.3rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socials a:hover {
+  color: #4190f8;
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .socials a {
+    margin: 0 0.5rem;
+  }
+}
