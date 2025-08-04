@@ -1,5 +1,3 @@
-
-
 'use client';
 import styles from "../styles/Navbar.module.css";
 import Link from 'next/link';
@@ -26,25 +24,25 @@ export default function Navbar() {
         <div className={`${styles.links} ${isOpen ? styles.active : ''}`}>
           <Link
             href="/"
-            className={`${styles.link} ${pathname === '/' ? styles.activeLink : ''}`}
+            className={`${styles.link} ${pathname === '/' ? styles.activeLink : ''}`} onClick={() => setIsOpen(false)}
           >
             Home
           </Link>
           <Link
             href="/about"
-            className={`${styles.link} ${pathname === '/about' ? styles.activeLink : ''}`}
+            className={`${styles.link} ${pathname === '/about' ? styles.activeLink : ''}`} onClick={() => setIsOpen(false)}
           >
             About
           </Link>
           <Link
             href="/project"
-            className={`${styles.link} ${pathname === '/project' ? styles.activeLink : ''}`}
+            className={`${styles.link} ${pathname === '/project' ? styles.activeLink : ''}`} onClick={() => setIsOpen(false)}
           >
             Projects
           </Link>
           <Link
             href="/contact"
-            className={`${styles.link} ${pathname === '/contact' ? styles.activeLink : ''}`}
+            className={`${styles.link} ${pathname === '/contact' ? styles.activeLink : ''}`} onClick={() => setIsOpen(false)}
           >
             Contact
           </Link>

@@ -10,7 +10,6 @@
 
 .gridContainer {
   max-width: 1200px; 
-  /* width: 100%; */
   display: grid;
   gap: 2rem;
   align-items: center;
