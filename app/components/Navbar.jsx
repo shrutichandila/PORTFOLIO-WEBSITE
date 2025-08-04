@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className={styles.nav}>
       <div className={styles.container}>
         <div>
-          <img className={styles.logo} src="/shruti2.png" alt="Logo" />
+          <img className={styles.logo} src="/Shruti2.png" alt="Logo" />
         </div>
 
         <div className={styles.menuIcon} onClick={toggleMenu}>
