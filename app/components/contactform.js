@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import styles from "./contactform.module.css";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -33,11 +34,10 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-
-      <label className="flex flex-col text-sm font-semibold">
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <label className={styles.label}>
         <span>
-          Name<span className="text-red-500 ml-1">*</span>
+          Name<span className={styles.required}>*</span>
         </span>
         <input
           type="text"
@@ -46,13 +46,13 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           placeholder="Your full name"
-          className="mt-1 p-3 rounded-lg bg-white/20 text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+          className={styles.input}
         />
       </label>
 
-      <label className="flex flex-col text-sm font-semibold">
+      <label className={styles.label}>
         <span>
-          Email<span className="text-red-500 ml-1">*</span>
+          Email<span className={styles.required}>*</span>
         </span>
         <input
           type="email"
@@ -61,13 +61,13 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           placeholder="you@example.com"
-          className="mt-1 p-3 rounded-lg bg-white/20 text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+          className={styles.input}
         />
       </label>
 
-      <label className="flex flex-col text-sm font-semibold">
+      <label className={styles.label}>
         <span>
-          Message<span className="text-red-500 ml-1">*</span>
+          Message<span className={styles.required}>*</span>
         </span>
         <textarea
           name="message"
@@ -76,20 +76,20 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           placeholder="Write your message here..."
-          className="mt-1 p-3 rounded-lg bg-white/20 text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 resize-none"
+          className={`${styles.input} ${styles.textarea}`}
         />
       </label>
 
       <button
         type="submit"
         disabled={status.loading}
-        className="mt-4 bg-[#1e3a8a] hover:bg-[#162e6c] transition text-white font-semibold py-3 rounded-lg shadow-sm"
+        className={styles.button}
       >
         {status.loading ? "Sending..." : "Send Message"}
       </button>
 
-      {status.success && <p className="mt-4 text-green-400 font-semibold">{status.success}</p>}
-      {status.error && <p className="mt-4 text-red-400 font-semibold">Error: {status.error}</p>}
+      {status.success && <p className={styles.success}>{status.success}</p>}
+      {status.error && <p className={styles.error}>Error: {status.error}</p>}
     </form>
   );
 }

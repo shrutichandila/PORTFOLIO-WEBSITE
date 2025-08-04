@@ -8,10 +8,10 @@ export default function Contact() {
     <main className={styles.main}>
       <section className={styles.section}>
         <h1 className={styles.heading}>
-          📬 Get In Touch
+          Contact Me
         </h1>
         <p className={styles.subtext}>
-          Have a project, idea, or just want to say hi? Fill out the form and I’ll get back to you soon!
+          Let’s connect. I’d love to hear from you and discuss your project or collaboration.
         </p>
         <ContactForm />
       </section>
