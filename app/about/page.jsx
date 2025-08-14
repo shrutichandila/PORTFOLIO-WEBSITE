@@ -5,14 +5,14 @@ import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython } from 'react-icons/fa';
 import { SiNextdotjs, SiDjango, SiMysql } from 'react-icons/si';
 
  const techStack = [
-   { name: 'HTML', type: 'Frontend', icon: <FaHtml5 className="text-orange-500 text-3xl mb-2" /> },
-   { name: 'CSS', type: 'Frontend', icon: <FaCss3Alt className="text-blue-500 text-3xl mb-2" /> },
-   { name: 'JavaScript', type: 'Frontend', icon: <FaJs className="text-yellow-400 text-3xl mb-2" /> },
-   { name: 'React', type: 'Frontend', icon: <FaReact className="text-cyan-400 text-3xl mb-2" /> },
-   { name: 'Next.js', type: 'Frontend', icon: <SiNextdotjs className="text-white text-3xl mb-2" /> },
-   { name: 'Python', type: 'Backend', icon: <FaPython className="text-blue-300 text-3xl mb-2" /> },
-   { name: 'Django', type: 'Backend', icon: <SiDjango className="text-green-500 text-3xl mb-2" /> },
-   { name: 'MySQL', type: 'Database', icon: <SiMysql className="text-blue-400 text-3xl mb-2" /> },
+   { name: 'HTML', type: 'Frontend', icon: <FaHtml5 className={styles.icon} title="HTML" color="#e34c26" /> },
+   { name: 'CSS', type: 'Frontend', icon: <FaCss3Alt className={styles.icon} title="CSS" color="#1572B6" /> },
+   { name: 'JavaScript', type: 'Frontend', icon: <FaJs className={styles.icon} title="JavaScript" color="#f7df1e" /> },
+   { name: 'React', type: 'Frontend', icon: <FaReact className={styles.icon} title="React" color="#61DAFB" /> },
+   { name: 'Next.js', type: 'Frontend', icon: <SiNextdotjs className={styles.icon} title="Next.js" color="white" /> },
+   { name: 'Python', type: 'Backend', icon: <FaPython className={styles.icon} title="Python" color="#3776AB" /> },
+   { name: 'Django', type: 'Backend', icon: <SiDjango className={styles.icon} title="Django" color="#092E20" /> },
+   { name: 'MySQL', type: 'Database', icon: <SiMysql className={styles.icon} title="MySQL" color="#00758F" /> },
  ];
 
 export default function About() {

@@ -1,81 +1,88 @@
 .nav {
-  background-color: rgb(2, 3, 5);
-  padding: 0.1rem 1.5rem;
+  background: linear-gradient(90deg, #1a1a2e, #16213e, #0f3460);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border: 3px solid #065288;
-  border-radius: 10px;
-  animation: navGlow 2s infinite alternate;
-  box-shadow: 0 0 20px #0790cf, 0 0 40px #097fbe inset;
-  /* margin: 2vh; */
+  padding: 0.8rem 0;
+  animation: navFadeIn 0.8s ease-in-out;
 }
 
-
 .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  height: 80px;
-  width: auto;
+.headi {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6a00, #ff00d4, #00eaff);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.headi:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 15px rgba(255, 0, 212, 0.6),
+               0 0 25px rgba(0, 234, 255, 0.6);
 }
 
 .menuIcon {
   display: none;
-  font-size: 2rem;
-  color: #00b7ff;
+  font-size: 1.8rem;
+  color: white;
   cursor: pointer;
 }
 
-/* === Link Styling === */
 .links {
   display: flex;
   gap: 1.5rem;
-  transition: max-height 0.3s ease-out;
+  transition: all 0.3s ease;
 }
 
 .link {
-  position: relative;
+  color: #e0e0e0;
   text-decoration: none;
-  color: white;
-  font-size: 1.1rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid transparent;
-  transition: all 0.4s ease;
+  font-size: 1.2rem;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* === Gradient Text + Border Glow === */
-.link:hover {
-  background: linear-gradient(90deg, #00ffe0, #f304c3);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  border: 2px solid #00ffe0;
-  animation: glow 1s ease-in-out infinite alternate;
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #00eaff;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
 }
-@keyframes navGlow {
-  0% {
-    border-color: #0a81f9;
-    box-shadow: 0 0 2.5px #036ec0, 0 0 5px #04b0ef inset;
-  }
-  100% {
-    border-color: #0e94e2;
-    box-shadow: 0 0 10px #1d96f3, 0 0 15px #0f84ea inset;
-  }
+
+.link:hover {
+  color: #00eaff;
+}
+
+.link:hover::after {
+  width: 100%;
 }
 
 .activeLink {
-  border: 2px solid #00ffe0;
-  animation: glow 1s ease-in-out infinite alternate;
-  background: linear-gradient(90deg, #00ffe0, #ff00c8);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #00eaff;
 }
 
+.activeLink::after {
+  width: 100%;
+}
 
 @media (max-width: 768px) {
   .menuIcon {
@@ -83,27 +90,40 @@
   }
 
   .links {
-    flex-direction: column;
     position: absolute;
     top: 70px;
-    left: 0;
-    background-color: #111;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    gap: 1rem;
-    padding: 0 1rem;
-    transition: max-height 0.5s ease-in-out;
+    right: 0;
+    background: #0f3460;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    padding: 1rem 0;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
   }
 
   .links.active {
-    max-height: 500px;
-    padding: 1rem;
+    transform: translateX(0%);
+    opacity: 1;
+    pointer-events: auto;
+    transition: transform 0.4s ease, opacity 0.4s ease;
   }
 
   .link {
-    text-align: center;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     font-size: 1.2rem;
   }
 }
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+} 
+

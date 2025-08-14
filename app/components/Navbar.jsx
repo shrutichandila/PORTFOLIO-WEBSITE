@@ -14,7 +14,8 @@ export default function Navbar() {
     <nav className={styles.nav}>
       <div className={styles.container}>
         <div>
-          <img className={styles.logo} src="/Shruti2.png" alt="Logo" />
+          {/* <img className={styles.logo} src="/Shruti2.png" alt="Logo" /> */}
+          <h1 className={styles.headi}>SHRUTI</h1>
         </div>
 
         <div className={styles.menuIcon} onClick={toggleMenu}>
@@ -33,6 +34,12 @@ export default function Navbar() {
             className={`${styles.link} ${pathname === '/about' ? styles.activeLink : ''}`} onClick={() => setIsOpen(false)}
           >
             About
+          </Link>
+          <Link
+            href="/skills"
+            className={`${styles.link} ${pathname === '/project' ? styles.activeLink : ''}`} onClick={() => setIsOpen(false)}
+          >
+            Skills
           </Link>
           <Link
             href="/project"

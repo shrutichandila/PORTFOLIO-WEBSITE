@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import profilePic from '../public/pic.jpg';
 import About from './about/page';
+import Skills from './skills/page';
 import Projects from './project/page';
 import Contact from './contact/page';
 import styles from "./styles/page.module.css"
@@ -28,11 +29,12 @@ export default function Home() {
             <p className={styles.p}>
               I specialize in building robust and scalable web applications. With expertise in both frontend and backend technologies, I turn ideas into beautifully crafted digital experiences. Let’s bring visions to life, one line of code at a time.
             </p>
+            <div className={styles.buttons}>
             <button className={styles.projectButton}>
               <a className={styles.pro} href="/project">View My Projects</a>
             </button>
 
-            
+            <button className={styles.cvbutton}>
             <a
               href="https://drive.google.com/file/d/1-0tSteaNc-1WadB4ckOv15-Rlb1h6_Oa/view"
               target="_blank"
@@ -41,6 +43,8 @@ export default function Home() {
             >
               View CV
             </a>
+            </button>
+            </div>
           </div>
 
           
@@ -48,6 +52,7 @@ export default function Home() {
           </div>
         </div>
       <About/>
+      <Skills/>
       <Projects/>
       <Contact/>
     </>

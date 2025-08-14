@@ -1,71 +1,72 @@
 .main {
-  min-height: 100vh;
-  background-color: black;
+  max-width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 2rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
 }
 
 .section {
   max-width: 700px;
-  width: 100%;
-  padding: 2rem;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #010e2e, #203f94, rgb(2, 2, 63));
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  animation: fadeIn 1s ease-in-out;
-}
-
-.heading {
-  color: white;
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
   text-align: center;
-  animation: slideUp 1s ease forwards;
+  padding: 2.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  animation: fadeInUp 0.8s ease-out;
 }
 
+/* .heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #facc15; 
+} */
+.heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ff6a00, #ff00d4, #00eaff);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+} 
 
 .subtext {
-  color: #cbd5e1;
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  text-align: center;
+  color: #e2e8f0;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes fadeIn {
-  0% {
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(25px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 600px) {
-  .heading {
-    font-size: 2rem;
-  }
-
-  .subtext {
-    font-size: 1rem;
-  }
-
+@media (max-width: 768px) {
   .section {
     padding: 1.5rem;
   }
-}
+  .heading {
+    font-size: 2rem;
+  }
+} 
