@@ -1,11 +1,11 @@
 .section {
-  /* max-height: 100vh; */
   max-width: 100%;
   padding: 50px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
 }
 
 .heading {
@@ -30,17 +30,18 @@
 
 .card {
   background-color: #0f2027;
+  border: 2px solid rgb(0, 191, 255);
   border-radius: 15px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(13, 13, 14, 0.982);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(5, 193, 235, 0.94);
 }
 
 .imageContainer {

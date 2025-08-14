@@ -6,6 +6,7 @@
   padding: 2rem;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #ffffff;
+  min-height: 100vh;
 }
 
 .section {
@@ -17,12 +18,6 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
-/* .heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #facc15; 
-} */
 .heading {
   font-size: clamp(2rem, 5vw, 3rem);
   text-align: center;
