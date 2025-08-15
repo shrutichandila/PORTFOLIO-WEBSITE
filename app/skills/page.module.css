@@ -95,19 +95,51 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  }
-  .heading {
-    font-size: 2rem;
+    grid-template-columns: repeat(2, 1fr);
   }
   .icon {
     font-size: 2.5rem;
   }
+}
+
+
+@media (max-width: 768px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
-} 
+  .heading {
+    font-size: 1.8rem;
+  }
+  .card {
+    padding: 15px;
+  }
+  .h2 {
+    font-size: 1.3rem;
+  }
+  .icon {
+    font-size: 2.2rem;
+  }
+  .p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+  .card {
+    padding: 12px;
+  }
+  .icon {
+    font-size: 2rem;
+  }
+  .p {
+    font-size: 0.85rem;
+  }
+}
+
+
+
